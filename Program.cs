@@ -28,6 +28,6 @@ class Program
         Console.WriteLine($"Your new library \"{LibraryName}\" is ready!");
         Console.WriteLine($"Press any key to get started");
         Console.ReadKey();
-        userLibrary.openMenu();  
+        userLibrary.Menu.Open();  
     }
 }

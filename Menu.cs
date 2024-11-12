@@ -1,40 +1,43 @@
 public class Menu
 {
-    string[] Options = [
+    public string LibraryName;
+    public List<Book> Books;
+    public string[] Options = [
         "List available books",
         "Add book to library",
         "Lend a book"
     ];
-    public Menu()
+    public Menu(string name, List<Book> books)
     {
-
+        LibraryName = name;
+        Books = books;
     }
-    public void open(){
+    public void Open(){
         Console.Clear();
          Console.WriteLine(LibraryName);
          Console.WriteLine("///BOOKS//////BOOKS//////BOOKS//////BOOKS//////BOOKS///");
          Console.WriteLine("Library interaction menu:");
         // Options
             int Index = 0;
-        foreach (String option in MenuOptions)
+        foreach (String option in Options)
         {
             Console.WriteLine($"{Index} - {option}");
             Index++;
         }
-        int selected = selectOption();
-        runOption(selected);
+        int selected = SelectOption();
+        RunOption(selected);
     }
-    public int selectOption(){
+    public int SelectOption(){
         var input = Console.ReadKey();
         if(char.IsDigit(input.KeyChar)){
         return int.Parse(input.KeyChar.ToString());
         }else{
             Console.Clear();
             Console.WriteLine("Not valid input");
-            return selectOption();
+            return SelectOption();
         }
     }
-        public void runOption(int selected){
+        public void RunOption(int selected){
       switch (selected)
       {
         case 0:
@@ -51,10 +54,10 @@ public class Menu
         {
             Console.WriteLine("Title and author can not be empty");
             Console.ReadKey();            
-            runOption(selected);
+            RunOption(selected);
         }else{
-            AvailableBooks.Add(new Book(title, author));
-            openMenu();
+            Books.Add(new Book(title, author));
+            Open();
         }
             
         break;
@@ -64,9 +67,16 @@ public class Menu
             Console.WriteLine("/////////////////////////");
         Console.WriteLine("Press any key to go back");
         Console.ReadKey();
-        openMenu();
+        Open();
         break;
       }
+    }
+    public void ListAvailableBooks(){
+        Books.ForEach((book) => Console.WriteLine($"{book.Title} by {book.Author}"));
+        Console.WriteLine("/////////////////////////");
+        Console.WriteLine("Press any key to go back");
+        Console.ReadKey();
+        Open();
     }
  
 }
