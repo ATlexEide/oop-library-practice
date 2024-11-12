@@ -9,7 +9,7 @@ public class Menu
     {
 
     }
-    public void openMenu(){
+    public void open(){
         Console.Clear();
          Console.WriteLine(LibraryName);
          Console.WriteLine("///BOOKS//////BOOKS//////BOOKS//////BOOKS//////BOOKS///");
