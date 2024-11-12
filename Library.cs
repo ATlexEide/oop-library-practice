@@ -1,7 +1,11 @@
 public class Library
 {
     string LibraryName;
-    LibraryMenu menu = new LibraryMenu();
+    String[] MenuOptions = [
+        "List available books",
+        "Add book to library",
+        "Lend a book"
+    ];
     public List<Book> AvailableBooks;
     public Library(string name)
     {
@@ -19,5 +23,28 @@ public class Library
     }
     public void ListAvailableBooks(){
         AvailableBooks.ForEach((book) => Console.WriteLine(book.Title));
+    }
+    public void openMenu(){
+        Console.Clear();
+         Console.WriteLine("Library interaction menu:");
+        // Options
+            int Index = 0;
+        foreach (String option in MenuOptions)
+        {
+            Index++;
+            Console.WriteLine($"{Index} - {option}");
+        }
+        int selected = selectOption();
+        Console.WriteLine(selected);
+    }
+    public int selectOption(){
+        var input = Console.ReadKey();
+        if(char.IsDigit(input.KeyChar)){
+        return int.Parse(input.KeyChar.ToString());
+        }else{
+            Console.Clear();
+            Console.WriteLine("Not valid input");
+            return selectOption();
+        }
     }
 }

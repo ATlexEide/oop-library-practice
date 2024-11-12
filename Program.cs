@@ -13,7 +13,6 @@ class Program
         String LibraryName = getLibraryName();
         Console.Clear();
         Library userLibrary = new Library(LibraryName);
-
         static string getLibraryName(){
         Console.WriteLine("Enter a name for your Library");
             String userInput = Console.ReadLine();
@@ -26,8 +25,11 @@ class Program
                 return userInput;
             }
         }
-        Console.WriteLine($"Your new library {LibraryName} is ready!");
-        LibraryMenu.open();
+        Console.WriteLine($"Your new library \"{LibraryName}\" is ready!");
+        Console.WriteLine($"Press any key to get started");
+        Console.ReadKey();
+        userLibrary.openMenu();
+        Console.ReadKey();
   
     }
 }
