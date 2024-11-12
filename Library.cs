@@ -1,6 +1,7 @@
 public class Library
 {
     string LibraryName;
+    LibraryMenu menu = new LibraryMenu();
     public List<Book> AvailableBooks;
     public Library(string name)
     {

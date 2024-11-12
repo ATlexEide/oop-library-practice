@@ -1,0 +1,13 @@
+public class LibraryMenu
+{
+
+    public LibraryMenu()
+    {
+
+    }
+          static void open(){
+        Console.WriteLine("Library interaction menu:");
+        // Options
+        LibraryMenu.foreach ((option) => Console.WriteLine(option))
+        }
+}

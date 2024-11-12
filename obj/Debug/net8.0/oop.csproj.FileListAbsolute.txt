@@ -12,3 +12,4 @@
 /Users/alex/kodehode/backend/oop/obj/Debug/net8.0/oop.pdb
 /Users/alex/kodehode/backend/oop/obj/Debug/net8.0/oop.genruntimeconfig.cache
 /Users/alex/kodehode/backend/oop/obj/Debug/net8.0/ref/oop.dll
+/Users/alex/kodehode/backend/oop/obj/Debug/net8.0/oop.sourcelink.json
