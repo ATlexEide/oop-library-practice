@@ -32,6 +32,8 @@ public class Library
     }
     public void openMenu(){
         Console.Clear();
+         Console.WriteLine(LibraryName);
+         Console.WriteLine("///BOOKS//////BOOKS//////BOOKS//////BOOKS//////BOOKS///");
          Console.WriteLine("Library interaction menu:");
         // Options
             int Index = 0;
