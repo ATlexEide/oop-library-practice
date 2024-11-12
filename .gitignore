@@ -1,4 +1,2 @@
-./obj
-./bin
-./Debug
-./net8.0
+obj/
+bin/

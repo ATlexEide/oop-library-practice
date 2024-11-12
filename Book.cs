@@ -11,7 +11,7 @@ public class Book
         Console.WriteLine($"Release date // {Release}");
     }
 
-    public Book(string title, string author, DateTime release)
+    public Book(string title, string author, DateTime release = new DateTime())
     {
         Title = title;
         Author = author;
