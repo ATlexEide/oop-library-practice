@@ -1,33 +1,33 @@
 ﻿using System.Security.Cryptography;
+using static System.Console;
 
 namespace oop;
-
 class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
-        Console.WriteLine("Press any key to make a library");
-        Console.ReadKey();
-        Console.Clear();
+        Clear();
+        WriteLine("Press any key to make a library");
+        ReadKey();
+        Clear();
         String LibraryName = getLibraryName();
-        Console.Clear();
+        Clear();
         Library userLibrary = new Library(LibraryName);
         static string getLibraryName(){
-        Console.WriteLine("Enter a name for your Library");
-            String userInput = Console.ReadLine();
+        WriteLine("Enter a name for your Library");
+            String userInput = ReadLine();
             if (string.IsNullOrWhiteSpace(userInput)){
-                Console.Clear();
-                Console.WriteLine("Invalid name, cannot be empty");
+                Clear();
+                WriteLine("Invalid name, cannot be empty");
                 return getLibraryName();
             }
             else{
                 return userInput;
             }
         }
-        Console.WriteLine($"Your new library \"{LibraryName}\" is ready!");
-        Console.WriteLine($"Press any key to get started");
-        Console.ReadKey();
+        WriteLine($"Your new library \"{LibraryName}\" is ready!");
+        WriteLine($"Press any key to get started");
+        ReadKey();
         userLibrary.Menu.Open();  
     }
 }

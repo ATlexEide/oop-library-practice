@@ -1,5 +1,7 @@
 using System.ComponentModel.Design;
 using System.Reflection.Metadata;
+using static System.Console;
+
 
 public class Library
 {
@@ -18,7 +20,7 @@ public class Library
     public Book? LendBook(string title)
     {        
         Book? book = AvailableBooks.Find(book => book.Title == title);
-        Console.WriteLine($"Lending you {book}");
+        WriteLine($"Lending you {book}");
         return book;
     }
        

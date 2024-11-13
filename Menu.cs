@@ -1,3 +1,6 @@
+using static System.Console;
+
+
 public class Menu
 {
     public string LibraryName;
@@ -13,27 +16,27 @@ public class Menu
         Books = books;
     }
     public void Open(){
-        Console.Clear();
-         Console.WriteLine(LibraryName);
-         Console.WriteLine("///BOOKS//////BOOKS//////BOOKS//////BOOKS//////BOOKS///");
-         Console.WriteLine("Library interaction menu:");
+        Clear();
+         WriteLine(LibraryName);
+         WriteLine("///BOOKS//////BOOKS//////BOOKS//////BOOKS//////BOOKS///");
+         WriteLine("Library interaction menu:");
         // Options
             int Index = 0;
         foreach (String option in Options)
         {
-            Console.WriteLine($"{Index} - {option}");
+            WriteLine($"{Index} - {option}");
             Index++;
         }
         int selected = SelectOption();
         RunOption(selected);
     }
     public int SelectOption(){
-        var input = Console.ReadKey();
+        var input = ReadKey();
         if(char.IsDigit(input.KeyChar)){
         return int.Parse(input.KeyChar.ToString());
         }else{
-            Console.Clear();
-            Console.WriteLine("Not valid input");
+            Clear();
+            WriteLine("Not valid input");
             return SelectOption();
         }
     }
@@ -41,19 +44,19 @@ public class Menu
       switch (selected)
       {
         case 0:
-            Console.Clear();
+            Clear();
             ListAvailableBooks();
         break;
         case 1:
-        Console.Clear();
-        Console.WriteLine("Enter book title:");
-        String title = Console.ReadLine();
-        Console.WriteLine("Enter book author:");
-        String author = Console.ReadLine();
+        Clear();
+        WriteLine("Enter book title:");
+        String title = ReadLine();
+        WriteLine("Enter book author:");
+        String author = ReadLine();
         if(string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(author))
         {
-            Console.WriteLine("Title and author can not be empty");
-            Console.ReadKey();            
+            WriteLine("Title and author can not be empty");
+            ReadKey();            
             RunOption(selected);
         }else{
             Books.Add(new Book(title, author));
@@ -62,20 +65,20 @@ public class Menu
             
         break;
         case 2:
-       Console.Clear();
-            Console.WriteLine("Hmmm, seems functionality is missing..");
-            Console.WriteLine("/////////////////////////");
-        Console.WriteLine("Press any key to go back");
-        Console.ReadKey();
+       Clear();
+            WriteLine("Hmmm, seems functionality is missing..");
+            WriteLine("/////////////////////////");
+        WriteLine("Press any key to go back");
+        ReadKey();
         Open();
         break;
       }
     }
     public void ListAvailableBooks(){
-        Books.ForEach((book) => Console.WriteLine($"{book.Title} by {book.Author}"));
-        Console.WriteLine("/////////////////////////");
-        Console.WriteLine("Press any key to go back");
-        Console.ReadKey();
+        Books.ForEach((book) => WriteLine($"{book.Title} by {book.Author}"));
+        WriteLine("/////////////////////////");
+        WriteLine("Press any key to go back");
+        ReadKey();
         Open();
     }
  

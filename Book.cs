@@ -1,4 +1,6 @@
 using Microsoft.VisualBasic;
+using static System.Console;
+
 
 public class Book
 {
@@ -6,9 +8,9 @@ public class Book
     public string Author;
     public DateTime  Release;
     public void PrintInfo(){
-        Console.WriteLine($"Title // {Title}");
-        Console.WriteLine($"Author // {Author}");
-        Console.WriteLine($"Release date // {Release}");
+        WriteLine($"Title // {Title}");
+        WriteLine($"Author // {Author}");
+        WriteLine($"Release date // {Release}");
     }
 
     public Book(string title, string author, DateTime release = new DateTime())
