@@ -6,6 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        FakeLoading newTest = new FakeLoading();
+        newTest.FakeLoad();
         Clear();
         WriteLine("Press any key to make a library");
         ReadKey();
