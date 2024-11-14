@@ -23,6 +23,10 @@ public class Library
         WriteLine($"Lending you {book}");
         return book;
     }
+    public void Loading(){
+      FakeLoading ldn = new FakeLoading();
+      ldn.FakeLoad(AvailableBooks.Count); 
+    }
        
 
 }

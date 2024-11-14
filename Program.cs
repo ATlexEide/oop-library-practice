@@ -6,8 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        FakeLoading newTest = new FakeLoading();
-        newTest.FakeLoad();
         Clear();
         WriteLine("Press any key to make a library");
         ReadKey();
@@ -15,6 +13,7 @@ class Program
         String LibraryName = getLibraryName();
         Clear();
         Library userLibrary = new Library(LibraryName);
+        userLibrary.Loading();
         static string getLibraryName(){
         WriteLine("Enter a name for your Library");
             String userInput = ReadLine();

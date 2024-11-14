@@ -4,14 +4,13 @@ using static Library;
 public class FakeLoading
 {
     public List<Book> books;
-    public FakeLoading(List<Books> _books){
-        books = _books;
+    public FakeLoading(){
     }
-public void FakeLoad(int bookAmount = 10)
+public void FakeLoad(int num = 10)
 {
     Random _int = new Random();
         int index = 0;
-        int step = 100 / books.Length;
+        int step = 100 / num;
         int currStep = step;
         String message = "#";
     for (int i = 0; i < 100; i++)
@@ -21,7 +20,7 @@ public void FakeLoad(int bookAmount = 10)
             currStep += step;
             index++;
             Thread.Sleep(1000);
-            WriteLine($"{AvailableBooks[index].title}");
+            // WriteLine($"{Books[index].title}");
     };
 
         
