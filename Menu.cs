@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using static System.Console;
 
 
@@ -5,11 +6,11 @@ public class Menu
 {
     public string LibraryName;
     public List<Book> Books;
-    public string[] Options = [
-        "List available books",
+    public Dictionary<String, Option> Options;
+        Options.Add(String "List available books",new Option(String "list", Action ()=> ListAvailableBooks()))
         "Add book to library",
         "Lend a book"
-    ];
+    };
     public Menu(string name, List<Book> books)
     {
         LibraryName = name;
